@@ -1,0 +1,125 @@
+/* עיצוב הדף */
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .camera-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  #camera {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #000;
+    border-radius: 5px;
+  }
+  
+  #canvas {
+    border: 2px dashed red;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  #photo {
+    margin-top: 20px;
+    display: none;
+    max-width: 600px;
+    border: 2px solid #000;
+    border-radius: 5px;
+  }
+  
+  /* עיצוב כפתורים */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #capture {
+    background-color: #007bff;
+  }
+  
+  #capture:hover {
+    background-color: #0056b3;
+  }
+  
+  #stopCamera {
+    background-color: #dc3545;
+  }
+  
+  #stopCamera:hover {
+    background-color: #c82333;
+  }
+  
+  #startCamera {
+    background-color: #28a745;
+  }
+  
+  #startCamera:hover {
+    background-color: #218838;
+  }
+  
+  #downloadImg {
+    background-color: #FF69B4;
+  }
+  
+  #downloadImg:hover {
+    background-color: #FF1493;
+  }
+  
+  #saveImg {
+    background-color: #87CEEB;
+  }
+  
+  #saveImg:hover {
+    background-color: #6CA6C1;
+  }
+  
+  #addElement {
+    background-color: #8B4513;
+  }
+  
+  #addElement:hover {
+    background-color: #A0522D;
+  }
+  
+  /* עיצוב האלמנטים */
+  .element-selector {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  #elements {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .selectable-element {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s;
+  }
+  
+  .selectable-element:hover {
+    border: 2px solid #007bff;
+  }
+  
+  .selectable-element.selected {
+    border: 2px solid #28a745;
+  }
+  
