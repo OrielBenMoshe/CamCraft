@@ -11,23 +11,6 @@
 // מניעת גישה ישירה
 if ( !defined('ABSPATH') ) exit;
 
-// הרשמת סקריפטים וסגנונות
-function camcraft_enqueue_scripts() {
-    // לבדוק אם השורטקוד נמצא בתוכן
-    if (is_singular() && has_shortcode(get_post()->post_content, 'camcraft_editor')) {
-        wp_enqueue_script('camcraft-js', plugins_url('/js/camcraft.js', __FILE__), array('jquery'), '1.0', true);
-        wp_enqueue_style('camcraft-css', plugins_url('/css/camcraft.css', __FILE__));
-    }
-}
-add_action('wp_enqueue_scripts', 'camcraft_enqueue_scripts');
-
-// יצירת שורטקוד [camcraft_editor]
-function camcraft_editor_shortcode() {
-    ob_start(); // להתחלת לכידה של פלט
-    include plugin_dir_path(__FILE__) . 'templates/editor-template.php'; // טעינת התבנית
-    return ob_get_clean(); // החזרת התוכן כטקסט
-}
-add_shortcode('camcraft_editor', 'camcraft_editor_shortcode');
 
 
 // הוספת רובריקה לתפריט הצדדי
@@ -54,6 +37,56 @@ function camcraft_admin_page() {
         echo '<div class="wrap"><p>' . __( 'שגיאה: קובץ התצוגה לא נמצא.', 'camcraft' ) . '</p></div>';
     }
 }
+
+
+
+// הרשמת סקריפטים וסגנונות
+function camcraft_enqueue_scripts() {
+    // לבדוק אם השורטקוד נמצא בתוכן
+    if (is_singular() && has_shortcode(get_post()->post_content, 'camcraft_editor')) {
+        wp_enqueue_script('camcraft-js', plugins_url('/assets/js/camcraft.js', __FILE__), array('jquery'), '1.0', true);
+        wp_enqueue_style('camcraft-css', plugins_url('/assets/css/camcraft.css', __FILE__));
+    }
+}
+add_action('wp_enqueue_scripts', 'camcraft_enqueue_scripts');
+
+
+
+// יצירת שורטקוד [camcraft_editor]
+function camcraft_editor_shortcode() {
+    ob_start(); // להתחלת לכידה של פלט
+    include plugin_dir_path(__FILE__) . 'templates/editor-template.php'; // טעינת התבנית
+    return ob_get_clean(); // החזרת התוכן כטקסט
+}
+add_shortcode('camcraft_editor', 'camcraft_editor_shortcode');
+
+// Enqueue scripts and styles for CamCraft admin page
+function camcraft_admin_enqueue_scripts( $hook ) {
+    // בדוק אם זהו הדף של CamCraft
+    if ( 'toplevel_page_camcraft' !== $hook ) {
+        return;
+    }
+
+    // טעינת CSS
+    wp_enqueue_style(
+        'camcraft-admin-style',
+        plugins_url( 'assets/css/camcraft.css', __FILE__ ),
+        array(),
+        '1.0.0'
+    );
+
+    // טעינת JS
+    wp_enqueue_script(
+        'camcraft-admin-script',
+        plugins_url( 'assets/js/camcraft.js', __FILE__ ),
+        array( 'jquery' ),
+        '1.0.0',
+        true
+    );
+}
+add_action( 'admin_enqueue_scripts', 'camcraft_admin_enqueue_scripts' );
+
+
 
 
 // AJAX שמירת תמונה
