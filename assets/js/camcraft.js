@@ -1,4 +1,5 @@
 let stream = null;
+console.log("hii!");
 
 // אלמנטים מה-HTML
 const video = document.getElementById("camera");

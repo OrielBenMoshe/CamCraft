@@ -402,7 +402,7 @@ $sort_order = isset($_GET['order']) ? sanitize_text_field($_GET['order']) : 'des
                     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
                     directionalLight.position.set(0, 1, 0);
                     scene.add(directionalLight);
-
+                    git log --oneline
                     // בקרי סיבוב
                     const controls = new THREE.OrbitControls(camera, renderer.domElement);
                     controls.enableZoom = false;
