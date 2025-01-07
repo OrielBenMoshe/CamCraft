@@ -123,3 +123,78 @@
     border: 2px solid #28a745;
   }
   
+
+
+/* דף טעינת מודלים תלת מימדיים */
+
+
+  .camcraft-3d-files .upload-form {
+      margin: 20px 0;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ccd0d4;
+      box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  }
+  .camcraft-3d-files .upload-form input[type="file"] {
+      margin: 10px 0;
+      display: block;
+  }
+  .camcraft-3d-files .existing-files {
+      margin-top: 30px;
+  }
+  .button-link-delete {
+      color: #a00;
+  }
+  .button-link-delete:hover {
+      color: #dc3232;
+      border-color: #dc3232;
+  }
+  .model-preview {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .model-preview canvas {
+      width: 100% !important;
+      height: 100% !important;
+  }
+  .preview-loading,
+  .preview-not-supported {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+  }
+  .preview-not-supported {
+      background: rgba(255,255,255,0.9);
+      padding: 5px;
+      border-radius: 3px;
+  }
+  .preview-loading.preview-error {
+      color: #dc3232;
+  }
+  .sortable .sorting-indicator {
+      display: none;
+  }
+  .sortable.sorted .sorting-indicator {
+      display: block;
+  }
+  .sortable.sorted.asc .sorting-indicator:before {
+      content: '\f142';
+  }
+  .sortable.sorted.desc .sorting-indicator:before {
+      content: '\f140';
+  }
+  .sortable a {
+      display: inline-block;
+      text-decoration: none;
+      color: #23282d;
+  }
+  .sortable a:hover {
+      color: #0073aa;
+  }

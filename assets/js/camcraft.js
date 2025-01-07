@@ -1,5 +1,4 @@
 let stream = null;
-console.log("hii!");
 
 // אלמנטים מה-HTML
 const video = document.getElementById("camera");
@@ -34,7 +33,7 @@ function startCamera() {
 }
 
 // הפעלת המצלמה בהתחלה
-startCamera();
+// startCamera();
 
 // צילום ושמירה ב-canvas
 captureBtn.addEventListener("click", () => {
@@ -96,15 +95,15 @@ saveImgBtn.addEventListener("click", () => {
     }, "image/png");
 });
 
-// הוספת אלמנט ל-Canvas
-addElementBtn.addEventListener("click", () => {
-    const context = canvas.getContext("2d");
-    const img = new Image();
-    img.src = "/wp-content/uploads/2024/12/pL4va5OrRMqFhFqWdDNomQ-removebg-preview.png"; // תמונה לדוגמה
-    img.onload = () => {
-        context.drawImage(img, 10, 50, 50, 50); // ציור האלמנט במיקום התחלתי
-    };
-});
+// // הוספת אלמנט ל-Canvas
+// addElementBtn.addEventListener("click", () => {
+//     const context = canvas.getContext("2d");
+//     const img = new Image();
+//     img.src = "/wp-content/uploads/2024/12/pL4va5OrRMqFhFqWdDNomQ-removebg-preview.png"; // תמונה לדוגמה
+//     img.onload = () => {
+//         context.drawImage(img, 10, 50, 50, 50); // ציור האלמנט במיקום התחלתי
+//     };
+// });
 
 // הוספת אירועים לבחירת אלמנט
 let selectedElement = null;
