@@ -1,6 +1,11 @@
 (function ($) {
+    
+    
     // פונקציה גנרית לטעינת מודל
     function load3DModel(container, fileUrl, fileType) {
+        
+        console.log('מתחיל טעינת מודל:', fileUrl);
+
         // יצירת סצנה
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0xf0f0f1);

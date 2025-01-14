@@ -16,6 +16,9 @@ if ( !defined('ABSPATH') ) exit;
 wp_enqueue_script('three-js', 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js', array(), null, true);
 wp_enqueue_script('gltf-loader', 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js', array('three-js'), null, true);
 wp_enqueue_script('orbit-controls', 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js', array('three-js'), null, true);
+wp_enqueue_script('camcraft-3d', plugin_dir_url(__FILE__) . 'assets/js/camcraft-3d-loader.js', array('three-js', 'jquery'), null, true);
+
+
 
 require_once plugin_dir_path(__FILE__) . 'includes/camcraft-models.php';
 

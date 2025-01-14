@@ -108,16 +108,17 @@ $current_tab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'settin
 $sort_by = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'date';
 $sort_order = isset($_GET['order']) ? sanitize_text_field($_GET['order']) : 'desc';
 
+
+
+
 // דיבאג לבדוק שכל הנתונים על הקבצי תלת מימד מגיעים מהתיקייה של הקבצים
-$files = get_option('camcraft_3d_files', array());
+// $files = get_option('camcraft_3d_files', array()); // הדרך הישנה שהשתמשנו בה
 $data10 = camcraft_get_models();
 
 function debug_to_console($data, $files) {
     echo '<script>';
     echo 'console.log("Model Data - new teacnic:");';
     echo 'console.log(' . json_encode($data) . ');';
-    echo 'console.log("Model Data old tecnic:");';
-    echo 'console.log(' . json_encode($files) . ');';
     echo '</script>';
 }
 
